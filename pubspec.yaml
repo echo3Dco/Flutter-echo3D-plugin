@@ -1,0 +1,23 @@
+name: echoar_package
+description: echoAR official Flutter plugin
+version: 0.0.1
+author: echoAR inc.
+homepage: https://www.echoar.xyz
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path_provider: ^1.6.10
+  http: ^0.12.1
+  archive: ^2.0.13
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  
