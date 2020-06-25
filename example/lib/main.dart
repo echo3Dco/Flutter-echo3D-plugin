@@ -40,12 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() async {
     if (widget.echoAR == null)
-      widget.echoAR = EchoAR(apiKey: "broad-wave-4759");
+      widget.echoAR = EchoAR(apiKey: "<Your-API-Key>");
     String imageLink= await widget.echoAR
-        .getModelLinkFromEntryId("fa6385a2-44be-4e6a-9708-6368dd3ef899");
+        .getModelLinkFromEntryId("<Stones-Entry-ID>");
     String gifLink= await widget.echoAR
-        .getModelLinkFromEntryId("0947eb87-7e45-4582-b50c-06e34b1d8c0f");
-    String path = await widget.echoAR.getModelFromEntryId("9a2e49af-5d79-48c0-8727-515d56687b22");
+        .getModelLinkFromEntryId("<Gif-Entry-ID>");
+    String path = await widget.echoAR.getModelFromEntryId("<Fox-Entry-ID>");
 
      
     setState(() {
