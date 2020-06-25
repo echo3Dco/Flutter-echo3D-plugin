@@ -16,6 +16,7 @@ A few resources to get you started if this is your first Flutter project:
 ## Setting up your echoAR project
 * Import the project dependecies by running `flutter pub get` from your terminal
 * Go to the echoAR console and upload the assets from the [models](/models) folder one by one.
+* In the echoAR console click `ADD TO CLOUD` and choose the suggested 3D model of a white fox.
 * Open the main.dart file from the [lib](/lib) folder, and make the following changes:
 	- Replace `<Your-API-Key>` with your echoAR API key
 	- Replace `<Stones-Entry-ID>` with the stones image entry ID on echoAR.
