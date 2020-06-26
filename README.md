@@ -1,6 +1,7 @@
 # echoAR Flutter Plugin
 
-A plugin which makes it easier to get your assets from echoAR
+echoAR is a cloud-based 3D-first content management system (CMS) and delivery network (CDN) that provides server-side solutions to help scale augmented and virtual reality (AR/VR) applications. Our 3D-ready cloud platform helps manage & deliver AR/VR content to apps & devices everywhere.
+This is a plugin which makes it easier to get your assets from echoAR.
 
 ## :book: Guide
 
@@ -10,7 +11,7 @@ Add echoAR plugin to your `pubspec.yaml`.
 An example is shown below. 
 ```yaml
 dev_dependencies:
-  echoar_package: "^0.0.1"
+  echoar_package: "^0.0.1+2"
 
 ```
 
@@ -36,7 +37,7 @@ To access your echoAR project, simply initialize your Flutter echoAR object:
 EchoAR(apiKey: "<YOUR-API-KEY>");
 ```
 Now your object is ready to go! 
-[Our example](/exapmle) project is avalable for you to keep exploring echoAR Flutter plugin.
+[Our example](https://github.com/echoARxyz/echoAR-Flutter-Plugin/tree/master/example) project is avalable for you to keep exploring echoAR Flutter plugin.
 
 ## :muscle: Support
 Feel free to reach out at [support@echoAR.xyz](mailto:support@echoAR.xyz) or join our [support channel on Slack](https://join.slack.com/t/echoar/shared_invite/enQtNTg4NjI5NjM3OTc1LWU1M2M2MTNlNTM3NGY1YTUxYmY3ZDNjNTc3YjA5M2QyNGZiOTgzMjVmZWZmZmFjNGJjYTcxZjhhNzk3YjNhNjE). 

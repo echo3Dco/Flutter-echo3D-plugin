@@ -224,7 +224,7 @@ class EchoAR {
   }
 
   /// Get targets
-  
+
   /// Get Image targets
   Future<String> getEntryImageTarget(EchoArEntry entry) async {
     if (entry.target.type != "IMAGE_TARGET")
@@ -250,5 +250,4 @@ class EchoAR {
     EchoArEntry entry = await getEntry(entryId);
     return getEntryImageTargetLink(entry);
   }
-
 }

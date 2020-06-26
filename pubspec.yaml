@@ -1,7 +1,6 @@
 name: echoar_package
-description: echoAR official Flutter plugin
-version: 0.0.1
-author: echoAR inc.
+description: echoAR is a cloud-based 3D-first content management system (CMS) and delivery network (CDN) that provides server-side solutions to help scale augmented and virtual reality (AR/VR) applications. Our 3D-ready cloud platform helps manage & deliver AR/VR content to apps & devices everywhere. This is a plugin which makes it easier to get your assets from echoAR.
+version: 0.0.1+2
 homepage: https://www.echoar.xyz
 
 environment:

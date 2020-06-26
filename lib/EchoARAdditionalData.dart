@@ -24,7 +24,6 @@ class EchoARAdditionalData {
   String vuforiaHologramStorageFilename;
   String videoHeight;
   String videoWidth;
-  
 
   EchoARAdditionalData({
     this.qrWebXRStorageID,
