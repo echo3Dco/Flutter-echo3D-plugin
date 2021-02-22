@@ -26,7 +26,7 @@ A few resources to get you started if this is your first Flutter project:
 
 ## :mag: Explore echoAR
 Now your project is ready to go! 
-Keep exploring echoAR on our (console)[https://console.echoar.xyz/] and our (docs)[https://docs.echoar.xyz/].
+Keep exploring echoAR on our [console](https://console.echoar.xyz/) and our [docs](https://docs.echoar.xyz/).
 
 ## Support
 Feel free to reach out at [support@echoAR.xyz](mailto:support@echoAR.xyz) or join our [support channel on Slack](https://join.slack.com/t/echoar/shared_invite/enQtNTg4NjI5NjM3OTc1LWU1M2M2MTNlNTM3NGY1YTUxYmY3ZDNjNTc3YjA5M2QyNGZiOTgzMjVmZWZmZmFjNGJjYTcxZjhhNzk3YjNhNjE). 
