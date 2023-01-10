@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider: ^1.6.10
-  http: ^0.12.1
+  http: ">=0.12.1 <0.14.0"
   archive: ^2.0.13
 
 dev_dependencies:
