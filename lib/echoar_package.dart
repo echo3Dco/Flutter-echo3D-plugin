@@ -22,7 +22,7 @@ class EchoAR {
 
   Future<List<EchoArEntry>> getAllEntries() async {
     final response =
-        await http.get('https://console.echoar.xyz/query?key=' + this.apiKey);
+        await http.get(Uri.parse('https://console.echoar.xyz/query?key=${this.apiKey}'));
     List<EchoArEntry> entryList = List<EchoArEntry>();
 
     if (response.statusCode == 200) {
@@ -44,10 +44,7 @@ class EchoAR {
   }
 
   Future<EchoArEntry> getEntry(String entryId) async {
-    final response = await http.get('https://console.echoar.xyz/query?key=' +
-        this.apiKey +
-        "&entry=" +
-        entryId);
+    final response = await http.get(Uri.parse('https://console.echoar.xyz/query?key=${this.apiKey}&entry=${entryId}'));
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
@@ -108,10 +105,7 @@ class EchoAR {
   /// accessed with the EchoARAdditionalData class. You can use the getUniqueMetadata
   /// to access your metadata
   Future<String> getUniqueMetadata(String entryId, String key) async {
-    final response = await http.get('https://console.echoar.xyz/query?key=' +
-        this.apiKey +
-        "&entry=" +
-        entryId);
+    final response = await http.get(Uri.parse('https://console.echoar.xyz/query?key=${this.apiKey}&entry=${entryId}'));
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
