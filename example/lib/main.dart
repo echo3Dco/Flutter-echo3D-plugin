@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title}) : super(key: key);
 
-  final String title;
-  EchoAR echoAR;
+  final String? title;
+  EchoAR? echoAR;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -36,16 +36,16 @@ class _MyHomePageState extends State<MyHomePage> {
   String _imageHologramPath = "";
   String _modelHologramPath = "";
   String _gifHologramPath = "";
-  String value;
+  String? value;
 
   void _incrementCounter() async {
     if (widget.echoAR == null)
       widget.echoAR = EchoAR(apiKey: "<Your-API-Key>");
-    String imageLink= await widget.echoAR
+    String imageLink= await widget.echoAR!
         .getModelLinkFromEntryId("<Stones-Entry-ID>");
-    String gifLink= await widget.echoAR
+    String gifLink= await widget.echoAR!
         .getModelLinkFromEntryId("<Gif-Entry-ID>");
-    String path = await widget.echoAR.getModelFromEntryId("<Fox-Entry-ID>");
+    String path = await widget.echoAR!.getModelFromEntryId("<Fox-Entry-ID>");
 
      
     setState(() {
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title!),
       ),
       body: Center(
         child: (_imageHologramPath == "" && _modelHologramPath == "" && _gifHologramPath == "") ? Text("Press the button to start") : ListView(

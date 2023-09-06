@@ -18,12 +18,12 @@ class EchoAR {
   /// Returns [value] plus 1.
   int addOne(int value) => value + 1;
 
-  EchoAR({@required this.apiKey});
+  EchoAR({required this.apiKey});
 
   Future<List<EchoArEntry>> getAllEntries() async {
     final response =
         await http.get(Uri.parse('https://console.echoar.xyz/query?key=${this.apiKey}'));
-    List<EchoArEntry> entryList = List<EchoArEntry>();
+    List<EchoArEntry> entryList = <EchoArEntry>[];
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
@@ -60,17 +60,17 @@ class EchoAR {
     }
   }
 
-  Future<EchoARHologram> getHologram(String entryId) async {
+  Future<EchoARHologram?> getHologram(String entryId) async {
     EchoArEntry entry = await getEntry(entryId);
     return entry.hologram;
   }
 
-  Future<EchoARTarget> getTarget(String entryId) async {
+  Future<EchoARTarget?> getTarget(String entryId) async {
     EchoArEntry entry = await getEntry(entryId);
     return entry.target;
   }
 
-  Future<EchoARAdditionalData> getAdditionalData(String entryId) async {
+  Future<EchoARAdditionalData?> getAdditionalData(String entryId) async {
     EchoArEntry entry = await getEntry(entryId);
     return entry.additionalData;
   }
@@ -85,14 +85,14 @@ class EchoAR {
 
   Future<String> getModelFromEntry(EchoArEntry entry) async {
     String url = await getModelLinkFromEntry(entry);
-    return _downloadFile(url, entry.hologram.filename);
+    return _downloadFile(url, entry.hologram!.filename!);
   }
 
   Future<String> getModelLinkFromEntry(EchoArEntry entry) async {
     return "https://console.echoar.xyz/query?key=" +
         this.apiKey +
         "&file=" +
-        entry.hologram.storageID;
+        entry.hologram!.storageID!;
   }
 
   Future<String> getModelLinkFromEntryId(String entryId) async {
@@ -104,7 +104,7 @@ class EchoAR {
   /// In the echoAR console, you can define your own metadata, This metadata can't be
   /// accessed with the EchoARAdditionalData class. You can use the getUniqueMetadata
   /// to access your metadata
-  Future<String> getUniqueMetadata(String entryId, String key) async {
+  Future<String?> getUniqueMetadata(String entryId, String key) async {
     final response = await http.get(Uri.parse('https://console.echoar.xyz/query?key=${this.apiKey}&entry=${entryId}'));
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
@@ -123,62 +123,62 @@ class EchoAR {
 
   /// Get files for Model Holograms
 
-  Future<String> getEntryGlb(EchoArEntry entry) async {
-    if (entry.hologram.type != "MODEL_HOLOGRAM")
+  Future<String?> getEntryGlb(EchoArEntry entry) async {
+    if (entry.hologram!.type != "MODEL_HOLOGRAM")
       throw Exception('Wrong Hologram Type');
-    String url = await getEntryGlbLink(entry);
+    String? url = await getEntryGlbLink(entry);
     if (url == null) return null;
-    return _downloadFile(url, entry.hologram.filename);
+    return _downloadFile(url, entry.hologram!.filename!);
   }
 
-  Future<String> getEntryGlbLink(EchoArEntry entry) async {
-    if (entry.hologram.type != "MODEL_HOLOGRAM")
+  Future<String?> getEntryGlbLink(EchoArEntry entry) async {
+    if (entry.hologram!.type != "MODEL_HOLOGRAM")
       throw Exception('Wrong Hologram Type');
-    if (entry.hologram.filename.endsWith(".glb"))
+    if (entry.hologram!.filename!.endsWith(".glb"))
       return "https://echoar-storage.s3.us-east-2.amazonaws.com/" +
           this.apiKey +
           "/" +
-          entry.hologram.storageID;
-    else if (entry.additionalData.glbHologramStorageID != null)
+          entry.hologram!.storageID!;
+    else if (entry.additionalData!.glbHologramStorageID != null)
       return "https://echoar-storage.s3.us-east-2.amazonaws.com/" +
           this.apiKey +
           "/" +
-          entry.additionalData.glbHologramStorageID;
+          entry.additionalData!.glbHologramStorageID!;
     else
       return null;
   }
 
-  Future<String> getEntryGlbLinkFromId(String entryId) async {
+  Future<String?> getEntryGlbLinkFromId(String entryId) async {
     EchoArEntry entry = await getEntry(entryId);
     return getEntryGlbLink(entry);
   }
 
-  Future<String> getEntryUsdz(EchoArEntry entry) async {
-    if (entry.hologram.type != "MODEL_HOLOGRAM")
+  Future<String?> getEntryUsdz(EchoArEntry entry) async {
+    if (entry.hologram!.type != "MODEL_HOLOGRAM")
       throw Exception('Wrong Hologram Type');
-    String url = await getEntryUsdzLink(entry);
+    String? url = await getEntryUsdzLink(entry);
     if (url == null) return null;
-    return _downloadFile(url, entry.hologram.filename);
+    return _downloadFile(url, entry.hologram!.filename!);
   }
 
-  Future<String> getEntryUsdzLink(EchoArEntry entry) async {
-    if (entry.hologram.type != "MODEL_HOLOGRAM")
+  Future<String?> getEntryUsdzLink(EchoArEntry entry) async {
+    if (entry.hologram!.type != "MODEL_HOLOGRAM")
       throw Exception('Wrong Hologram Type');
-    if (entry.hologram.filename.endsWith(".usdz"))
+    if (entry.hologram!.filename!.endsWith(".usdz"))
       return "https://echoar-storage.s3.us-east-2.amazonaws.com/" +
           this.apiKey +
           "/" +
-          entry.hologram.storageID;
-    else if (entry.additionalData.usdzHologramStorageID != null)
+          entry.hologram!.storageID!;
+    else if (entry.additionalData!.usdzHologramStorageID != null)
       return "https://echoar-storage.s3.us-east-2.amazonaws.com/" +
           this.apiKey +
           "/" +
-          entry.additionalData.usdzHologramStorageID;
+          entry.additionalData!.usdzHologramStorageID!;
     else
       return null;
   }
 
-  Future<String> getEntryUsdzLinkFromId(String entryId) async {
+  Future<String?> getEntryUsdzLinkFromId(String entryId) async {
     EchoArEntry entry = await getEntry(entryId);
     return getEntryUsdzLink(entry);
   }
@@ -192,27 +192,27 @@ class EchoAR {
   }
 
   /// Get files for Image Holograms
-  Future<String> getEntryComressedImage(EchoArEntry entry) async {
-    if (entry.hologram.type != "IMAGE_HOLOGRAM")
+  Future<String?> getEntryComressedImage(EchoArEntry entry) async {
+    if (entry.hologram!.type != "IMAGE_HOLOGRAM")
       throw Exception('Wrong Hologram Type');
-    String url = await getEntryComressedImageLink(entry);
+    String? url = await getEntryComressedImageLink(entry);
     if (url == null) return null;
-    return _downloadFile(url, entry.hologram.filename);
+    return _downloadFile(url, entry.hologram!.filename!);
   }
 
-  Future<String> getEntryComressedImageLink(EchoArEntry entry) async {
-    if (entry.hologram.type != "IMAGE_HOLOGRAM")
+  Future<String?> getEntryComressedImageLink(EchoArEntry entry) async {
+    if (entry.hologram!.type != "IMAGE_HOLOGRAM")
       throw Exception('Wrong Hologram Type');
-    if (entry.additionalData.compressedImageStorageID != null)
+    if (entry.additionalData!.compressedImageStorageID != null)
       return "https://echoar-storage.s3.us-east-2.amazonaws.com/" +
           this.apiKey +
           "/" +
-          entry.additionalData.compressedImageStorageID;
+          entry.additionalData!.compressedImageStorageID!;
     else
       return null;
   }
 
-  Future<String> getEntryComressedImageLinkFromId(String entryId) async {
+  Future<String?> getEntryComressedImageLinkFromId(String entryId) async {
     EchoArEntry entry = await getEntry(entryId);
     return getEntryComressedImageLink(entry);
   }
@@ -220,27 +220,27 @@ class EchoAR {
   /// Get targets
 
   /// Get Image targets
-  Future<String> getEntryImageTarget(EchoArEntry entry) async {
-    if (entry.target.type != "IMAGE_TARGET")
+  Future<String?> getEntryImageTarget(EchoArEntry entry) async {
+    if (entry.target!.type != "IMAGE_TARGET")
       throw Exception('Wrong target Type');
-    String url = await getEntryImageTargetLink(entry);
+    String? url = await getEntryImageTargetLink(entry);
     if (url == null) return null;
-    return _downloadFile(url, entry.hologram.filename);
+    return _downloadFile(url, entry.hologram!.filename!);
   }
 
-  Future<String> getEntryImageTargetLink(EchoArEntry entry) async {
-    if (entry.target.type != "IMAGE_TARGET")
+  Future<String?> getEntryImageTargetLink(EchoArEntry entry) async {
+    if (entry.target!.type != "IMAGE_TARGET")
       throw Exception('Wrong target Type');
-    if (entry.target.storageID != null)
+    if (entry.target!.storageID != null)
       return "https://echoar-storage.s3.us-east-2.amazonaws.com/" +
           this.apiKey +
           "/" +
-          entry.target.storageID;
+          entry.target!.storageID!;
     else
       return null;
   }
 
-  Future<String> getEntryImageTargetLinkFromId(String entryId) async {
+  Future<String?> getEntryImageTargetLinkFromId(String entryId) async {
     EchoArEntry entry = await getEntry(entryId);
     return getEntryImageTargetLink(entry);
   }

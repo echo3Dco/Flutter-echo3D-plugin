@@ -3,10 +3,10 @@ import 'package:echoar_package/EchoArHologram.dart';
 import 'package:echoar_package/EchoArTarget.dart';
 
 class EchoArEntry {
-  String id;
-  EchoARTarget target;
-  EchoARHologram hologram;
-  EchoARAdditionalData additionalData;
+  String? id;
+  EchoARTarget? target;
+  EchoARHologram? hologram;
+  EchoARAdditionalData? additionalData;
 
   EchoArEntry({
     this.id,

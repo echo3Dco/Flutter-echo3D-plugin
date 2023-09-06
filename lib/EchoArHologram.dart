@@ -1,13 +1,13 @@
 class EchoARHologram {
-  String filename;
-  String storageID;
-  List<dynamic> textureFilenames;
-  List<dynamic> textureStorageIDs;
-  String materialFilename;
-  String materialStorageID;
-  String id;
-  String type;
-  String targetID;
+  String? filename;
+  String? storageID;
+  List<dynamic>? textureFilenames;
+  List<dynamic>? textureStorageIDs;
+  String? materialFilename;
+  String? materialStorageID;
+  String? id;
+  String? type;
+  String? targetID;
 
   EchoARHologram({
     this.id,
