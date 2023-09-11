@@ -1,14 +1,14 @@
 class EchoARTarget {
-  String id;
-  String type;
-  List<dynamic> holograms;
-  String storageID;
-  String filename;
-  String country;
-  String city;
-  String place;
-  String latitude;
-  String longitude;
+  String? id;
+  String? type;
+  List<dynamic>? holograms;
+  String? storageID;
+  String? filename;
+  String? country;
+  String? city;
+  String? place;
+  String? latitude;
+  String? longitude;
 
   EchoARTarget({
     this.id,

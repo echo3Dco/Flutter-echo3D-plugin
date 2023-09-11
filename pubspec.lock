@@ -2,21 +2,13 @@
 # See https://dart.dev/tools/pub/glossary#lockfile
 packages:
   archive:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: archive
-      sha256: f06332efd7b0886705a929c5d3b52cda4d6d0979627c1dbe9a18fc24becf50ae
+      sha256: "49b1fad315e57ab0bbc15bcbb874e83116a1d78f77ebd500a4af6c9407d6b28e"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.13"
-  args:
-    dependency: transitive
-    description:
-      name: args
-      sha256: "6ba785824030bc97154264652acfd6a2dc699cd85f6def708fb7534d23ef1348"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.6.0"
+    version: "3.3.8"
   async:
     dependency: transitive
     description:
@@ -41,14 +33,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
-  charcode:
-    dependency: transitive
-    description:
-      name: charcode
-      sha256: fb98c0f6d12c920a02ee2d998da788bca066ca5f148492b7085ee23372b12306
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.1"
   clock:
     dependency: transitive
     description:
@@ -69,34 +53,18 @@ packages:
     dependency: transitive
     description:
       name: convert
-      sha256: "3fa83bc417e26f1d55814443a603747d48e3cdf55b2f4fea27dea8e9224dcefd"
+      sha256: "0f08b14755d163f6e2134cb58222dd25ea2a2ee8a195e53983d57c075324d592"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "3.1.1"
   crypto:
     dependency: transitive
     description:
       name: crypto
-      sha256: "3ce628f3c6a7144be6c524dbb20ca5af52fa59c850c587bf5e52cd70ece8e7e8"
+      sha256: ff625774173754681d66daaf4a448684fb04b78f902da9cb3d308c19cc5e8bab
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.5"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.6"
-  echoar_package:
-    dependency: "direct main"
-    description:
-      name: echoar_package
-      sha256: "81d2ab4e2e14eb04566aaa1df344587a9d67daf382ca43927be7276092599bf0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.2"
+    version: "3.0.3"
   fake_async:
     dependency: transitive
     description:
@@ -118,21 +86,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_3d_obj:
-    dependency: "direct main"
-    description:
-      name: flutter_3d_obj
-      sha256: "6553727f37cccb1bc80b30ffa5f937d89a5d803843991b852683af8593a4f39d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.6"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
@@ -179,22 +139,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
-  model_viewer:
-    dependency: "direct main"
-    description:
-      name: model_viewer
-      sha256: "571f59acb54adddd17f9150580d3dac54689c117d232f26245763a29418113af"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.0"
-  nested:
-    dependency: transitive
-    description:
-      name: nested
-      sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -204,7 +148,7 @@ packages:
     source: hosted
     version: "1.8.2"
   path_provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path_provider
       sha256: a1aa8aaa2542a6bc57e381f132af822420216c80d4781f7aa085ca3229208aaa
@@ -267,14 +211,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.6"
-  provider:
-    dependency: "direct main"
+  pointycastle:
+    dependency: transitive
     description:
-      name: provider
-      sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
+      name: pointycastle
+      sha256: "7c1e5f0d23c9016c5bbd8b1473d0d3fb3fc851b876046039509e18e0c7485f2c"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.5"
+    version: "3.7.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -344,14 +288,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  webview_flutter:
-    dependency: transitive
-    description:
-      name: webview_flutter
-      sha256: "055385927555b78567a7a2850092fc7a42e153b7bc9e45a1db7c501cdc17bcf8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.22+1"
   win32:
     dependency: transitive
     description:
